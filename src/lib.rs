@@ -12,6 +12,10 @@ impl EspError {
     pub fn convert(_error: esp_err_t) -> Result<(), Self> {
         Ok(())
     }
+
+    pub const fn from(_error: esp_err_t) -> Option<Self> {
+        Some(EspError)
+    }
 }
 
 impl std::error::Error for EspError {}
@@ -26,6 +30,10 @@ pub unsafe fn esp_wifi_set_country_code(
     _country: *const c_char,
     _ieee80211d_enabled: bool,
 ) -> esp_err_t {
+    0
+}
+
+pub unsafe fn esp_wifi_get_country_code(_country: *mut c_char) -> esp_err_t {
     0
 }
 

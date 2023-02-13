@@ -26,6 +26,7 @@ impl std::fmt::Display for EspError {
     }
 }
 
+#[allow(clippy::missing_safety_doc)]
 pub unsafe fn esp_wifi_set_country_code(
     _country: *const c_char,
     _ieee80211d_enabled: bool,
@@ -33,6 +34,7 @@ pub unsafe fn esp_wifi_set_country_code(
     0
 }
 
+#[allow(clippy::missing_safety_doc)]
 pub unsafe fn esp_wifi_get_country_code(_country: *mut c_char) -> esp_err_t {
     0
 }
@@ -49,10 +51,12 @@ pub struct timezone {
     pub tz_dsttime: c_int,
 }
 
+#[allow(clippy::missing_safety_doc)]
 pub unsafe fn gettimeofday(_p: *mut timeval, _tz: *mut c_void) -> c_int {
     0
 }
 
+#[allow(clippy::missing_safety_doc)]
 pub unsafe fn settimeofday(_arg1: *const timeval, _arg2: *const timezone) -> c_int {
     0
 }

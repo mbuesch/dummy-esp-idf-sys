@@ -40,12 +40,14 @@ pub unsafe fn esp_wifi_get_country_code(_country: *mut c_char) -> esp_err_t {
 }
 
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct timeval {
     pub tv_sec: u64,
     pub tv_usec: u32,
 }
 
 #[repr(C)]
+#[derive(Debug, Default, Copy, Clone)]
 pub struct timezone {
     pub tz_minuteswest: c_int,
     pub tz_dsttime: c_int,
